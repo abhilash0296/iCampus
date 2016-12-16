@@ -17,6 +17,7 @@ public class StudentController
 	@RequestMapping("/students")
 	public @ResponseBody List<String> allStudents() {
 		List<String> list = studentService.getStudents();
+		System.out.println("git testing");
 		return list;
 	}
 	
