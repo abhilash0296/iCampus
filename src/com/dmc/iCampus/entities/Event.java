@@ -6,8 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Entity
-@Table(name="EventDetail")
+@Table(name="eventdetails")
 public class Event implements Serializable
 {
 	@Id
@@ -16,7 +17,7 @@ public class Event implements Serializable
 	@Column
 	private String CompanyName;
 	@Column
-	private int Datetime;
+	private String Datetime;
 	@Column
 	private String Venue;
 	@Column
@@ -32,28 +33,28 @@ public class Event implements Serializable
 	@Column
 	private int PostGraduation;
 	@Column
-	private int yeargap;
+	private int Yeargap;
 	@Column
-	private int workexperience;
+	private int Workexperience;
 	
 	public Event() {
 		super();
 	}
-	public Event(int id, String companyName, int datetime, String venue, String designation, int package1, float sSC,
-			float hSC, int graduation, int postGraduation, int yeargap, int workexperience) {
+	public Event(int id, String companyName, String datetime, String venue, String designation, int annualSalary, float ssc,
+			float hsc, int graduation, int postGraduation, int yeargap, int workexperience) {
 		super();
 		this.id = id;
 		CompanyName = companyName;
 		Datetime = datetime;
 		Venue = venue;
 		Designation = designation;
-		Package = package1;
-		SSC = sSC;
-		HSC = hSC;
+		Package = annualSalary;
+		SSC = ssc;
+		HSC = hsc;
 		Graduation = graduation;
 		PostGraduation = postGraduation;
-		this.yeargap = yeargap;
-		this.workexperience = workexperience;
+		this.Yeargap = yeargap;
+		this.Workexperience = workexperience;
 	}
 	public int getId() {
 		return id;
@@ -67,10 +68,10 @@ public class Event implements Serializable
 	public void setCompanyName(String companyName) {
 		CompanyName = companyName;
 	}
-	public int getDatetime() {
+	public String getDatetime() {
 		return Datetime;
 	}
-	public void setDatetime(int datetime) {
+	public void setDatetime(String datetime) {
 		Datetime = datetime;
 	}
 	public String getVenue() {
@@ -88,20 +89,20 @@ public class Event implements Serializable
 	public int getPackage() {
 		return Package;
 	}
-	public void setPackage(int package1) {
-		Package = package1;
+	public void setPackage(int annualSalary) {
+		Package = annualSalary;
 	}
 	public float getSSC() {
 		return SSC;
 	}
-	public void setSSC(float sSC) {
-		SSC = sSC;
+	public void setSSC(float ssc) {
+		SSC = ssc;
 	}
 	public float getHSC() {
 		return HSC;
 	}
-	public void setHSC(float hSC) {
-		HSC = hSC;
+	public void setHSC(float hsc) {
+		HSC = hsc;
 	}
 	public int getGraduation() {
 		return Graduation;
@@ -116,23 +117,23 @@ public class Event implements Serializable
 		PostGraduation = postGraduation;
 	}
 	public int getYeargap() {
-		return yeargap;
+		return Yeargap;
 	}
 	public void setYeargap(int yeargap) {
-		this.yeargap = yeargap;
+		this.Yeargap = yeargap;
 	}
 	public int getWorkexperience() {
-		return workexperience;
+		return Workexperience;
 	}
 	public void setWorkexperience(int workexperience) {
-		this.workexperience = workexperience;
+		this.Workexperience = workexperience;
 	}
 	@Override
 	public String toString() {
 		return "Event [id=" + id + ", CompanyName=" + CompanyName + ", Datetime=" + Datetime + ", Venue=" + Venue
 				+ ", Designation=" + Designation + ", Package=" + Package + ", SSC=" + SSC + ", HSC=" + HSC
-				+ ", Graduation=" + Graduation + ", PostGraduation=" + PostGraduation + ", yeargap=" + yeargap
-				+ ", workexperience=" + workexperience + "]";
+				+ ", Graduation=" + Graduation + ", PostGraduation=" + PostGraduation + ", yeargap=" + Yeargap
+				+ ", workexperience=" + Workexperience + "]";
 	}
 	
 	

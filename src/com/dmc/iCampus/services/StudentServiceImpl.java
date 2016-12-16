@@ -23,5 +23,10 @@ public class StudentServiceImpl implements StudentService {
 	public List<String> getStudents() {
 		return studentdao.getStudentList();
 	}
+	@Transactional
+	public void addStudent(Student s) {
+		studentdao.addStudent(s);
+	}
+	
 
 }
